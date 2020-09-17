@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suggest MailAddress</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./css/all.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>メールアドレスをサジェストしてくれます</h1>
+      <p>＠（アットマーク）を入力すると、＠以降の文字列が評価されて候補を出してくれるよ！<br>
+        <span class="note">候補がないときはあきらめよう</span>
+      </p>
+      <form action="./" class="form" method="POST">
+        <div class="form__item">
+          <label for="mail">メールアドレス</label>
+          <input type="text" name="mail" id="mail" />
+          <ul id="result"></ul>
+        </div>
+        <div class="form__item">
+          <input type="submit" value="送信する">
+        </div>
+      </form>
+      <h2>ドメイン候補一覧</h2>
+      <ul id="suggestList"></ul>
+      <button id="viewMore">もっとみる</button>
+    </div>
+      <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/suggest.js"></script>
+  </body>
+</html>
