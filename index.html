@@ -11,11 +11,12 @@
     <div class="container">
       <h1>メールアドレスをサジェストしてくれます</h1>
       <p>＠（アットマーク）を入力すると、＠以降の文字列が評価されて候補を出してくれるよ！<br>
-        <span class="note">候補がないときはあきらめよう</span>
+        <span class="note">※候補がないときはあきらめよう</span><br>
+        <span class="note">※送信しても何も起きないよ</span>
       </p>
-      <form action="./" class="form" method="POST">
+      <form action="" class="form">
         <div class="form__item">
-          <label for="mail">メールアドレス</label>
+          <label for="mail"><sup>*</sup>メールアドレス</label>
           <input type="text" name="mail" id="mail" />
           <ul id="result"></ul>
         </div>
