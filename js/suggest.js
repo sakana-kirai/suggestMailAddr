@@ -62,7 +62,7 @@ $(function () {
   const result = $("#result");
   $("#mail").on("keyup", function (e) {
     let _self = $(this).val().trim();
-    let index = _self.search(/[@＠]/);
+    let index = _self.search(/@/);
     let user = _self.substring(0, index);
 
     // @が含まれるとき
@@ -93,7 +93,7 @@ $(function () {
     let user = target.substring(0, index);
 
     // ユーザ@ドメイン で連結
-    $("#mail").val(user + "@" + _self);
+    $("#mail").val(`${user}@${_self}`);
     // 初期化
     result.html("");
   });
@@ -112,8 +112,9 @@ $(function () {
 
   const url = location.search;
   if(url.length > 7) {
-    let query = decodeURI(url.substr(6));
-    alert(query + ' と入力されました');
+    let query = url.substr(6);
+    query = query.replace('%40', '@');
+    alert(decodeURI(query) + ' と入力されました');
   }
 
 });
