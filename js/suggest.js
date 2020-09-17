@@ -108,6 +108,12 @@ $(function () {
       $(this).hide();
       $('#suggestList').css('height', '');
     }
-    
   });
+
+  const url = location.search;
+  if(url.length > 7) {
+    let query = decodeURI(url.substr(6));
+    alert(query + ' と入力されました');
+  }
+
 });
