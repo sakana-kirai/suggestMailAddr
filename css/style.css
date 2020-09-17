@@ -2,6 +2,7 @@
 
 html {
   font-size: 62.5%;
+  font-family: vardana, sans-serif;
 }
 
 body {
@@ -100,6 +101,8 @@ button {
   margin: 5.5vw auto auto;
   padding: 1rem 3rem;
   transition: .3s;
+  appearance: none;
+  outline: none;
 }
 input[type="submit"]:active,
 button:active {
