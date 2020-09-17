@@ -60,6 +60,17 @@ $(function () {
   $('#suggestList').html(tmp1).css('height', '300px');
 
   const result = $("#result");
+  $(".submit").on('click', function(){
+    const _self = $(this).val();
+    const reg = /[\w\-\._]+@[\w\-\._]+\.[A-Za-z]+/;
+    if(!reg.test(_self)){
+      setTimeout(()=>{
+        $('label .error').html('xxx@xxx.xxxの形式で入力してください');
+      }, 500);
+    } else {
+      $('label .error').html('');
+    }
+  });
   $("#mail").on("keyup", function (e) {
     let _self = $(this).val().trim();
     let index = _self.search(/@/);
@@ -96,6 +107,7 @@ $(function () {
     $("#mail").val(`${user}@${_self}`);
     // 初期化
     result.html("");
+    $('label .error').html('');
   });
 
   let clickCount = 0;

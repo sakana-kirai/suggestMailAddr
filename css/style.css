@@ -64,10 +64,17 @@ p .note {
 }
 
 label {
+  display: inline-block;
   color: #666;
-  display: block;
   font-weight: bold;
-  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+label .error {
+  display: inline-block;
+  color: #e04a3f;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 1.5rem;
 }
 
 label sup {
@@ -84,9 +91,10 @@ button {
 }
 
 input {
-  width: 80%;
+  display: block;
   font-size: 1.2em;
   border: 1px solid #bababa;
+  width: 80%;
   transition: .3s;
 }
 input:focus {
