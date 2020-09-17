@@ -59,11 +59,10 @@ $(function () {
   });
   $('#suggestList').html(tmp1).css('height', '300px');
 
-  const result = $("#result");
   $(".submit").on('click', function(){
-    const _self = $(this).val();
-    const reg = /[\w\-\._]+@[\w\-\._]+\.[A-Za-z]+/;
-    if(!reg.test(_self)){
+    const target = $("#mail").val();
+    const reg = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if(!reg.test(target) || target.length === 0){
       setTimeout(()=>{
         $('label .error').html('xxx@xxx.xxxの形式で入力してください');
       }, 500);
@@ -72,10 +71,11 @@ $(function () {
       $('label .error').html('');
     }
   });
+
+  const result = $("#result");
   $("#mail").on("keyup", function (e) {
     let _self = $(this).val().trim();
     let index = _self.search(/@/);
-    let user = _self.substring(0, index);
 
     // @が含まれるとき
     if (index > 0) {
