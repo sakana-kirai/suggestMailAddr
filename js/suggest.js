@@ -57,7 +57,7 @@ $(function () {
   const domainViewList = domainList.map((e)=> {
     tmp1 += `<li>${e}</li>`;
   });
-  $('#suggestList').html(tmp1);
+  $('#suggestList').html(tmp1).css('height', '300px');
 
   const result = $("#result");
   $("#mail").on("keyup", function (e) {
@@ -101,11 +101,12 @@ $(function () {
   let clickCount = 0;
   $('#viewMore').on('click', function(){
     let listHeight = $('#suggestList').innerHeight();
-    if(clickCount < 3) {
+    if(clickCount < 1) {
       clickCount++;
-      $('#suggestList').css('height', listHeight + 504);
+      $('#suggestList').css('height', listHeight + 500);
     } else {
       $(this).hide();
+      $('#suggestList').css('height', '');
     }
     
   });
