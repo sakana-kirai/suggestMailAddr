@@ -67,6 +67,7 @@ $(function () {
       setTimeout(()=>{
         $('label .error').html('xxx@xxx.xxxの形式で入力してください');
       }, 500);
+      return false;
     } else {
       $('label .error').html('');
     }
