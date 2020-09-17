@@ -83,13 +83,13 @@ button {
   border-radius: 4px;
 }
 
-input[type="text"] {
+input {
   width: 80%;
   font-size: 1.2em;
   border: 1px solid #bababa;
   transition: .3s;
 }
-input[type="text"]:focus {
+input:focus {
   border: 1px solid #82b340;
   box-shadow: 0 0 3px #82b340;
 }
